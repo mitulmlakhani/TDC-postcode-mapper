@@ -35,7 +35,7 @@ class HomeController extends Controller
             try {
                 $address = implode(", ", array_values($row));
 
-                $url = "https://geocode.maps.co/search?api_key=6636148dc6f8a965485722bzxd2cd86&q=$address";
+                $url = "https://geocode.maps.co/search?api_key=". config('services.geocode.key') ."&q=$address";
 
                 $response = Http::get($url);
 
